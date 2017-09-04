@@ -50,6 +50,15 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#333333">
 
+    <script>
+    var trackOutboundLink = function(url) {
+       ga('send', 'event', 'outbound', 'click', url, {
+         'transport': 'beacon',
+         'hitCallback': function(){document.location = url;}
+       });
+    }
+    </script>
+
   </head>
   <body>
     <main role="main">
@@ -65,11 +74,11 @@
               </div>
               <!-- end column-->
               <div class="column">
-                <h2><svg class="fa-check-square-o"><use xlink:href="#fa-check-square-o"></use></svg> <a href="https://www.shopify.com/?ref=michaelwender-com">Build a website</a></h2>
+                <h2><svg class="fa-check-square-o"><use xlink:href="#fa-check-square-o"></use></svg> <a href="https://www.shopify.com/?ref=michaelwender-com" onclick="trackOutboundLink('https://www.shopify.com'); return false;">Build a website</a></h2>
                 <p class="text-intro">Build your business ecommerce website quickly</p>
-                <p><em>You need a website.</em> QuickWeb points you to tools to help you build and establish your business presence online. Get started with <a href="https://www.shopify.com/?ref=michaelwender-com">a 14-day free trial</a>, and build an ecommerce website for your business by clicking the link below:</p>
+                <p><em>You need a website.</em> QuickWeb points you to tools to help you build and establish your business presence online. Get started with <a href="https://www.shopify.com/?ref=michaelwender-com" onclick="trackOutboundLink('https://www.shopify.com'); return false;">a 14-day free trial</a>, and build an ecommerce website for your business by clicking the link below:</p>
                 <p>
-                  <a href="https://www.shopify.com/?ref=michaelwender-com" class="button" title="Build a website with Shopify">
+                  <a href="https://www.shopify.com/?ref=michaelwender-com" class="button" onclick="trackOutboundLink('https://www.shopify.com'); return false;" title="Build a website with Shopify">
                     <svg class="fa-shopping-cart">
                       <use xlink:href="#fa-shopping-cart"></use>
                     </svg>
